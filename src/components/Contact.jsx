@@ -1,14 +1,16 @@
 import { motion } from 'framer-motion';
 import Reveal from './Reveal';
 import SectionHead from './SectionHead';
+import RegionScene from './RegionScene';
 import { contacts, elVar } from '../data';
 import { fadeUp, stagger } from '../motion';
 
 export default function Contact() {
   return (
-    <section className="section section--contact" id="contact">
+    <section className="section section--contact region region--natlan" id="contact">
+      <RegionScene region="natlan" />
       <div className="container contact__inner">
-        <SectionHead tag="06 — Send a Message" title="Let's Connect" />
+        <SectionHead index={6} region="natlan" title="Let's Connect" />
         <Reveal as="p" className="contact__desc">
           Open to work, collaborations, or just talking backend and AI. Reach out through any channel below.
         </Reveal>

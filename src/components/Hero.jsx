@@ -1,30 +1,12 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Typewriter from './Typewriter';
 import { profile, roles } from '../data';
 import { fadeUp, stagger } from '../motion';
 
-const photoIn = {
-  hidden: { opacity: 0, scale: 0.6 },
-  show: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 120, damping: 14 } },
-};
-
 export default function Hero() {
-  const { scrollY } = useScroll();
-  const photoY = useTransform(scrollY, [0, 500], [0, -60]);
-
   return (
     <section className="hero" id="top">
-      <div className="shooting-star" />
-      <div className="shooting-star shooting-star--2" />
-
       <motion.div className="container hero__inner" variants={stagger} initial="hidden" animate="show">
-        <motion.div className="hero__photo-outer" variants={photoIn} style={{ y: photoY }}>
-          <div className="hero__rays" />
-          <div className="hero__photo-wrap">
-            <img src={profile.photo} alt={profile.name} className="hero__photo" />
-          </div>
-        </motion.div>
-
         <motion.p className="hero__eyebrow" variants={fadeUp}>
           <span className="diamond" />
           Traveler&apos;s Profile
@@ -63,10 +45,6 @@ export default function Hero() {
           <span>{profile.location}</span>
         </motion.div>
       </motion.div>
-
-      <a href="#about" className="scroll-hint" aria-label="Scroll down">
-        <span />
-      </a>
     </section>
   );
 }

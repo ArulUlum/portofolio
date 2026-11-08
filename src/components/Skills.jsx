@@ -1,14 +1,16 @@
 import { motion } from 'framer-motion';
 import Reveal from './Reveal';
 import SectionHead from './SectionHead';
+import RegionScene from './RegionScene';
 import { elVar, skillGroups } from '../data';
 import { popIn, stagger } from '../motion';
 
 export default function Skills() {
   return (
-    <section className="section" id="skills">
+    <section className="section region region--fontaine" id="skills">
+      <RegionScene region="fontaine" />
       <div className="container">
-        <SectionHead tag="05 — Talents & Visions" title="Tech Stack" />
+        <SectionHead index={5} region="fontaine" title="Tech Stack" />
         <div className="skills__grid">
           {skillGroups.map((group) => (
             <Reveal className="skills__col" key={group.title} variants={stagger}>

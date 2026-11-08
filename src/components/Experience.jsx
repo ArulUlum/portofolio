@@ -1,14 +1,16 @@
 import { motion } from 'framer-motion';
 import Reveal from './Reveal';
 import SectionHead from './SectionHead';
+import RegionScene from './RegionScene';
 import { experience } from '../data';
 import { fadeLeft, stagger } from '../motion';
 
 export default function Experience() {
   return (
-    <section className="section section--alt" id="experience">
+    <section className="section region region--liyue" id="experience">
+      <RegionScene region="liyue" />
       <div className="container">
-        <SectionHead tag="02 — Adventure Log" title="Work Experience" />
+        <SectionHead index={2} region="liyue" title="Work Experience" />
         <div className="timeline">
           {experience.map((job) => (
             <Reveal className="timeline__item" key={job.title} variants={stagger}>

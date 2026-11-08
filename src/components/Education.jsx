@@ -1,15 +1,17 @@
 import { motion } from 'framer-motion';
 import Reveal from './Reveal';
 import SectionHead from './SectionHead';
+import RegionScene from './RegionScene';
 import Corners from './Corners';
 import { education } from '../data';
 import { cardStagger, fadeUp } from '../motion';
 
 export default function Education() {
   return (
-    <section className="section section--alt" id="education">
+    <section className="section region region--sumeru" id="education">
+      <RegionScene region="sumeru" />
       <div className="container">
-        <SectionHead tag="04 — Trials & Training" title="Education & Roles" />
+        <SectionHead index={4} region="sumeru" title="Education & Roles" />
 
         <Reveal className="edu" variants={cardStagger} whileHover={{ y: -3 }}>
           <Corners />
